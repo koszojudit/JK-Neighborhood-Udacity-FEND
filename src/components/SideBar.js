@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import '../App.css';
 import nature from '../images/nature.svg';
@@ -12,7 +11,7 @@ class SideBar extends Component {
   render () {
 
     return (
-      <aside className="sidebar" role="sidebar">
+      <aside className="sidebar">
         <input className="search-input"
           type="text"
           placeholder="Search by name"
