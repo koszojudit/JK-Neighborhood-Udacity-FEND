@@ -11,8 +11,10 @@ class App extends Component {
     return (
       <div className="app">
         <Header />
-        <SideBar />
-        <MapContainer />
+        <main>
+          <SideBar />
+          <MapContainer />
+        </main>
         <Footer />
       </div>
 
