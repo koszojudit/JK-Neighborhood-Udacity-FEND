@@ -12,6 +12,7 @@ class App extends Component {
 
   state = {
     locations: [],
+    filteredLocations: null,
     selectMarker: [],
     infoWindow: false,
     center: {
@@ -23,6 +24,10 @@ class App extends Component {
 
   componentDidMount () {
     this.loadLocations();
+  }
+
+  updateLocations = filteredLocations => {
+    this.setState({filteredLocations: filteredLocations});
   }
 
   loadLocations = () => {
@@ -44,9 +49,9 @@ class App extends Component {
     this.setState({ selectMarker: [], infoWindow: false })
   }
 
-
   render() {
-    const { locations, selectMarker, infoWindow, center, zoom } = this.state
+    const { locations, filteredLocations, selectMarker, infoWindow, center, zoom } = this.state
+    const currentLocations = filteredLocations || locations;
 
     return (
 
@@ -61,9 +66,10 @@ class App extends Component {
             infoWindow={infoWindow}
             closeInfoWindow={this.closeInfoWindow}
             eventHandler={this.centerMap}
+            updateLocations = {this.updateLocations}
           />
           <MapContainer
-            locations={locations}
+            locations={currentLocations}
             center={center}
             zoom={zoom}
             marker={selectMarker}

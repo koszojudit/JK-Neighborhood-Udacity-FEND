@@ -15,22 +15,37 @@ class SideBar extends Component {
     filteredLocations: null,
   }
 
-  filterPlaces = (event) => {
+  searchLocations = (event) => {
 
-    const { locations, infoWindow, closeInfoWindow } = this.props;
+    const { locations, infoWindow, closeInfoWindow, updateLocations } = this.props;
     const query = event.target.value.toLowerCase();
-
     this.setState({ query: query })
     closeInfoWindow();
 
     const filteredLocations = locations.filter((location) => {
       const match = location.title.toLowerCase().indexOf(query) > -1;
-      //location.marker.setVisible(match);
       return match;
     })
 
     filteredLocations.sort(this.sortName);
-    this.setState({ filteredLocations })
+    this.setState({ filteredLocations });
+    updateLocations(filteredLocations);
+  }
+
+  filterLocations = (type) => {
+    console.log(type);
+
+    const { locations, infoWindow, closeInfoWindow, updateLocations } = this.props;
+    closeInfoWindow();
+
+    const filteredLocations = locations.filter((location) => {
+      const match = location.type.indexOf(type) > -1;
+      return match;
+    })
+
+    filteredLocations.sort(this.sortName);
+    this.setState({ filteredLocations });
+    updateLocations(filteredLocations);
   }
 
   render () {
@@ -49,25 +64,25 @@ class SideBar extends Component {
           aria-label="text filter"
           tabIndex="0"
           value={ query }
-          onChange={ this.filterPlaces }
+          onChange={ this.searchLocations }
         />
 
         <p className="sidebar-heading">Choose your experience</p>
 
         <div className="filter">
-          <div className="filter-item nature">
+          <div className="filter-item nature" onClick={() => this.filterLocations('nature')}>
             <img src={nature} alt="nature"/>
             <p>Nature</p>
           </div>
-          <div className="filter-item culture">
+          <div className="filter-item culture" onClick={() => this.filterLocations('culture')}>
             <img src={culture} alt="culture"/>
             <p>Culture</p>
           </div>
-          <div className="filter-item leisure">
+          <div className="filter-item leisure" onClick={() => this.filterLocations('leisure')}>
             <img src={leisure} alt="leisure"/>
             <p>Leisure</p>
           </div>
-          <div className="filter-item playground">
+          <div className="filter-item playground" onClick={() => this.filterLocations('playground')}>
             <img src={playground} alt="playground"/>
             <p>Playground</p>
           </div>
