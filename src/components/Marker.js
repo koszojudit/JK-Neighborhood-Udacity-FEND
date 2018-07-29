@@ -1,12 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import naturePin from '../images/nature.svg';
 import culturePin from '../images/culture.svg';
 import leisurePin from '../images/leisure.svg';
 import playgroundPin from '../images/playground.svg';
 
-import Pin from '../images/pin.svg';
+import '../App.css';
 
 const Marker = (props) => {
 
@@ -20,17 +19,18 @@ const Marker = (props) => {
     break;
     case 'playground': pinImage=playgroundPin
     break;
+    default: pinImage=naturePin
   }
 
   return (
-    <div title={props.name}>
-
+    <div
+    title={props.name}
+    className={'marker'}
+    >
         <img
-             width={48}
-             height={64}
-             alt={`Marker of location ${props.location.altname ? props.location.altname : props.location.title}`}
-             //onClick={(event) => props.eventHandler(props.location, props.location.position)}
-             src={pinImage}
+          src={pinImage}
+          alt={`Marker of ${props.location.name}`}
+          onClick={(event) => props.eventHandler(props.location, props.location.position)}
         />
       </div>
     );

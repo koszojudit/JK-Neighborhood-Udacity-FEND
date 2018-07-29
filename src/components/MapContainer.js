@@ -3,6 +3,7 @@ import GoogleMapReact from 'google-map-react';
 
 import preloader from '../images/preloader.svg';
 import Marker from './Marker'
+import InfoWindow from './InfoWindow'
 
 import '../App.css';
 
@@ -14,15 +15,16 @@ import '../App.css';
 class MapContainer extends Component {
 
   static defaultProps = {
-    center: {
-      lat: 47.497912,
-      lng: 19.040235},
-    zoom: 13,
     style: require("../data/map-style.json"),
   };
 
   state = {
     isLoading: true
+  }
+
+  eventHandler = (location, position) => {
+    this.setState({ marker: location });
+    this.props.eventHandler(location, position)
   }
 
   componentDidMount() {
@@ -39,14 +41,14 @@ class MapContainer extends Component {
     */
   }
 
-  eventHandler = (location, pos) => {
+  eventHandler = (location, position) => {
     this.setState({ marker: location });
-    this.props.eventHandler(location, pos)
+    this.props.eventHandler(location, position)
   }
 
   render() {
 
-    const { locations, marker, isLoading } = this.props
+    const { locations, marker, infoWindow, closeInfoWindow, isLoading } = this.props
 
     if(isLoading) {
       return (
@@ -76,14 +78,24 @@ class MapContainer extends Component {
                 lat={location.position.lat}
                 lng={location.position.lng}
                 name={location.name}
+                address={location.address}
                 type={location.type}
                 location={location}
-
-                //eventHandler={this.eventHandler}
+                eventHandler={this.eventHandler}
                 marker={marker}
               />
             ))}
 
+            {marker.length !== 0 && infoWindow && (
+              <InfoWindow
+                info={marker}
+                lat={marker.position.lat}
+                lng={marker.position.lng}
+                eventHandler={this.eventHandler}
+                closeInfoWindow={closeInfoWindow}
+              />
+
+            )}
 
           </GoogleMapReact>
 

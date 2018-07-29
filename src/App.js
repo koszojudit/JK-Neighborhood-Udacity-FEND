@@ -11,7 +11,14 @@ import * as data from './data/locations.json';
 class App extends Component {
 
   state = {
-    locations: []
+    locations: [],
+    selectMarker: [],
+    infoWindow: false,
+    center: {
+      lat: 47.497912,
+      lng: 19.040235
+    },
+    zoom: 13
   }
 
   componentDidMount () {
@@ -22,12 +29,24 @@ class App extends Component {
     let locations = [];
     locations.push(...data);
     this.setState({ locations: locations });
-    console.log(locations);
+  }
+
+  centerMap = (location, position) => {
+    this.setState({ center: position, zoom: 15 });
+    console.log(this.state.zoom);
+    this.openInfoWindow(location);
+  }
+
+  openInfoWindow = (marker) => {
+    this.setState({ selectMarker: marker, infoWindow: true })
+  }
+  closeInfoWindow = () => {
+    this.setState({ selectMarker: [], infoWindow: false })
   }
 
 
   render() {
-    const { locations } = this.state
+    const { locations, selectMarker, infoWindow, center, zoom } = this.state
 
     return (
 
@@ -35,7 +54,15 @@ class App extends Component {
         <Header />
         <main>
           <SideBar />
-          <MapContainer locations={locations} />
+          <MapContainer
+            locations={locations}
+            center={center}
+            zoom={zoom}
+            marker={selectMarker}
+            infoWindow={infoWindow}
+            closeInfoWindow={this.closeInfoWindow}
+            eventHandler={this.centerMap}
+          />
         </main>
         <Footer />
       </div>
