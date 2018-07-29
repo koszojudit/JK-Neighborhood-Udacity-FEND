@@ -1,0 +1,261 @@
+[{
+  "title": "Margitsziget",
+  "type": "nature",
+  "address": "1138 Budapest, Margitsziget",
+  "possition": {
+    "lat": 47.526641,
+    "lng": 19.046394,
+  }
+}
+
+{
+  "title": "Városliget (City Park)",
+  "type": "nature",
+  "address": "1146 Budapest, Kós Károly sétány",
+  "possition": {
+    "lat": 47.516948,
+    "lng": 19.081935,
+  }
+}
+
+{
+  "title": "Gellért Hill",
+  "type": "nature",
+  "address": "1111 Budapest, Szent Gellért tér",
+  "possition": {
+    "lat": 47.483962,
+    "lng": 19.053522,
+  }
+}
+
+{
+  "title": "Kopaszi Dam",
+  "type": "nature",
+  "address": "1117 Budapest, Kopaszi-gát",
+  "possition": {
+    "lat": 47.464091,
+    "lng": 19.062524,
+  }
+}
+
+{
+  "title": "Buda Hills (Normafa)",
+  "type": "nature",
+  "address": "1121 Budapest, Eötvös út 57.",
+  "possition": {
+    "lat": 47.502371,
+    "lng": 18.967173,
+  }
+}
+
+{
+  "title": "Budapest Zoo",
+  "type": "nature",
+  "address": "1146 Budapest, Állatkerti krt. 6-12.",
+  "possition": {
+    "lat": 47.517927,
+    "lng": 19.077525,
+  }
+}
+
+{
+  "title": "Budakeszi Vadaspark (Zoo)",
+  "type": "nature",
+  "address": "2092 Budakeszi, Skót u. 4.",
+  "possition": {
+    "lat": 47.497747,
+    "lng": 18.926066,
+  }
+}
+
+{
+  "title": "Palace of Arts",
+  "type": "culture",
+  "address": "1095 Budapest, Komor Marcell utca",
+  "possition": {
+    "lat": 47.470293,
+    "lng": 19.071886,
+  }
+}
+
+{
+  "title": "Palace of Miracles",
+  "type": "culture",
+  "address": "1222 Budapest, Nagytétényi út 37-43.",
+  "possition": {
+    "lat": 47.406698,
+    "lng": 19.016944,
+  }
+}
+
+{
+  "title": "Miniversum",
+  "type": "culture",
+  "address": "1061 Budapest, Andrássy út 12.",
+  "possition": {
+    "lat": 47.501391,
+    "lng": 19.057288,
+  }
+}
+
+{
+  "title": "Hungarian Natural History Museum",
+  "type": "culture",
+  "address": "1083 Budapest, Ludovika tér",
+  "possition": {
+    "lat": 47.481836,
+    "lng": 19.085122,
+  }
+}
+
+{
+  "title": "Hungarian Railway Museum & Park",
+  "type": "culture",
+  "address": "1142 Budapest, Tatai út 95.",
+  "possition": {
+    "lat": 47.542756,
+    "lng": 19.099230,
+  }
+}
+
+{
+  "title": "Aquaworld",
+  "type": "leisure",
+  "address": "1044 Budapest, Íves út 16.",
+  "possition": {
+    "lat": 47.601107,
+    "lng": 19.112179,
+  }
+}
+
+{
+  "title": "Orczy Kalandpark",
+  "type": "leisure",
+  "address": "1089 Budapest, Orczy út 1.",
+  "possition": {
+    "lat": 47.481858,
+    "lng": 19.087994,
+  }
+}
+
+{
+  "title": "Children's Railway",
+  "type": "leisure",
+  "address": "1026 Budapest, Hűvösvölgyi út 205.",
+  "possition": {
+    "lat": 47.541623,
+    "lng": 18.965771,
+  }
+}
+
+{
+  "title": "Libegő (Chairlift)",
+  "type": "leisure",
+  "address": "1121 Budapest, Zugligeti út 97.",
+  "possition": {
+    "lat": 47.516308,
+    "lng": 18.974252,
+  }
+}
+
+{
+  "title": "Budapest Grand Circus",
+  "type": "leisure",
+  "address": "1146 Budapest, Állatkerti krt. 12a",
+  "possition": {
+    "lat": 47.519495,
+    "lng": 19.080979,
+  }
+}
+
+{
+  "title": "Budapest Eye",
+  "type": "leisure",
+  "address": "1051 Budapest, Erzsébet tér",
+  "possition": {
+    "lat": 47.497610,
+    "lng": 19.052995,
+  }
+}
+
+{
+  "title": "Buda Castle Funicular",
+  "type": "leisure",
+  "address": "1013 Budapest, Sikló u.",
+  "possition": {
+    "lat": 47.497544,
+    "lng": 19.040164,
+  }
+}
+
+{
+  "title": "Zöld Péter at Millenáris Park",
+  "type": "playground",
+  "address": "1024 Fény utca 20-22.",
+  "possition": {
+    "lat": 47.510867,
+    "lng": 19.026349,
+  }
+}
+
+{
+  "title": "Giant Slopes (Óbuda Island)",
+  "type": "playground",
+  "address": "1033 Budapest, Óbuda Island (Hajógyári Sziget",
+  "possition": {
+    "lat": 47.549494,
+    "lng": 19.053844,
+  }
+}
+
+{
+  "title": "Cerka-firka (Gellért Hill)",
+  "type": "playground",
+  "address": "1118 Budapest, Verejték u.",
+  "possition": {
+    "lat": 47.485067,
+    "lng": 19.043351,
+  }
+}
+
+{
+  "title": "VUK (Gellért Hill)",
+  "type": "playground",
+  "address": "1016 Budapest, Bérc u. 31.",
+  "possition": {
+    "lat": 47.486362,
+    "lng": 19.040223,
+  }
+}
+
+{
+  "title": "Károlyi Gardens",
+  "type": "playground",
+  "address": "1053 Budapest, Károlyi-kert",
+  "possition": {
+    "lat": 47.492114,
+    "lng": 19.059711,
+  }
+}
+
+{
+  "title": "Károlyi Gardens",
+  "type": "playground",
+  "address": "1053 Budapest, Károlyi-kert",
+  "possition": {
+    "lat": 47.492114,
+    "lng": 19.059711,
+  }
+}
+
+{
+  "title": "Olimpia Park Playground",
+  "type": "playground",
+  "address": "1055 Budapest, Olimpia park",
+  "possition": {
+    "lat": 47.510863,
+    "lng": 19.046715,
+  }
+}
+
+]
