@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import ListItem from './ListItem';
+
 import '../App.css';
 import nature from '../images/nature.svg';
 import culture from '../images/culture.svg';
@@ -8,7 +10,35 @@ import playground from '../images/playground.svg';
 
 class SideBar extends Component {
 
+  state = {
+    query: '',
+    filteredLocations: null,
+  }
+
+  filterPlaces = (event) => {
+
+    const { locations, infoWindow, closeInfoWindow } = this.props;
+    const query = event.target.value.toLowerCase();
+
+    this.setState({ query: query })
+    closeInfoWindow();
+
+    const filteredLocations = locations.filter((location) => {
+      const match = location.title.toLowerCase().indexOf(query) > -1;
+      //location.marker.setVisible(match);
+      return match;
+    })
+
+    filteredLocations.sort(this.sortName);
+    this.setState({ filteredLocations })
+  }
+
   render () {
+    const { locations, eventHandler } = this.props
+
+    const { query, filteredLocations } = this.state
+
+    const currentLocations = filteredLocations || locations;
 
     return (
       <aside className="sidebar">
@@ -18,6 +48,8 @@ class SideBar extends Component {
           role="search"
           aria-label="text filter"
           tabIndex="0"
+          value={ query }
+          onChange={ this.filterPlaces }
         />
 
         <p className="sidebar-heading">Choose your experience</p>
@@ -43,11 +75,15 @@ class SideBar extends Component {
 
         <p className="sidebar-heading">Choose a place to visit</p>
 
-        <ul className="location-list">
-          <li className="location-item">
-            <p className="location-name">Location Name</p>
-          </li>
-        </ul>
+        <div className="location-list" tabIndex={0} aria-label={`${locations.length} locations listed`}>
+          {currentLocations.map(location => (
+            <ListItem
+              key={location.id}
+              location={location}
+              eventHandler={eventHandler}
+            />
+          ))}
+        </div>
 
       </aside>
 

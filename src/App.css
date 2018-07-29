@@ -115,6 +115,12 @@ main {
   padding: 0;
 }
 
+.list-item {
+  margin: 4px 0 4px 0;
+  font-size: 0.7em;
+  font-family: 'Montserrat', sans-serif;
+}
+
 /* Map component */
 
 .map {
@@ -256,7 +262,7 @@ main {
   .map {
     order: 1;
     width: 100vw;
-    height: 40vh;
+    height: 50vh;
    }
 
   .footer  {

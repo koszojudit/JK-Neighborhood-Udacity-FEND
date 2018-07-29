@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import Header from './components/Header.js';
+import Header from './components/Header';
 import MapContainer from './components/MapContainer';
 import SideBar from './components/SideBar';
 import Footer from './components/Footer';
@@ -32,7 +32,7 @@ class App extends Component {
   }
 
   centerMap = (location, position) => {
-    this.setState({ center: position, zoom: 15 });
+    this.setState({ center: position, zoom: 14 });
     console.log(this.state.zoom);
     this.openInfoWindow(location);
   }
@@ -53,7 +53,15 @@ class App extends Component {
       <div className="app">
         <Header />
         <main>
-          <SideBar />
+          <SideBar
+            locations={locations}
+            center={center}
+            zoom={zoom}
+            marker={selectMarker}
+            infoWindow={infoWindow}
+            closeInfoWindow={this.closeInfoWindow}
+            eventHandler={this.centerMap}
+          />
           <MapContainer
             locations={locations}
             center={center}
