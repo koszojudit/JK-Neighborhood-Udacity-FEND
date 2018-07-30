@@ -25,7 +25,7 @@ const Marker = (props) => {
   return (
     <div
     title={props.name}
-    className={'marker'}
+    className={`marker ${props.marker.id === props.location.id ? 'pulse' : 'marker'}`}
     >
         <img
           src={pinImage}

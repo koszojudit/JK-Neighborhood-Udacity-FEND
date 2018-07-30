@@ -142,6 +142,15 @@ main {
   cursor: pointer;
 }
 
+.marker.pulse {
+  animation: pulse 0.5s ease 0s alternate 4;
+  transform-origin: center;
+}
+
+@keyframes pulse {
+  to { transform: scale(1.2);}
+}
+
 .info-window {
   position: absolute;
   text-align: center;
@@ -153,7 +162,7 @@ main {
   cursor: default;
   background: #fff;
   position: relative;
-  left: 20px;
+  left: 25px;
   bottom: 260px;
   border-radius: 5px;
   box-shadow: 0 2px 2px #bdbdbd;
