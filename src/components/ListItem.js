@@ -21,7 +21,7 @@ class ListItem extends Component {
     return (
       <div
           className="list-item"
-          tabIndex='0'
+          tabIndex="0"
           aria-label={location.title}
           onClick={(event) => {
             event.preventDefault();

@@ -230,7 +230,7 @@ main {
 
 /* Footer component */
 
-.footer {
+footer {
   width: 100vw;
   position: fixed;
   bottom: 0;
@@ -274,7 +274,7 @@ main {
     height: 50vh;
    }
 
-  .footer  {
+  footer  {
     order: 3;
     visibility: hidden;
   }

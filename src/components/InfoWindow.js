@@ -8,13 +8,13 @@ const InfoWindow = ({ info, infoWindow, closeInfoWindow }) => {
     return (
       <div className="info-window">
 
-        <p className="info-title">{info.title}</p>
-        <p className="info-address"> {info.address}</p>
+        <p className="info-title" role="heading" aria-label="location name">{info.title}</p>
+        <p className="info-address" role="heading" aria-label="location address"> {info.address}</p>
 
         <button className="close-window"
                 onClick={(event) => closeInfoWindow()}>Close</button>
 
-        <img className="info-image" src={info.imageUrl}/>
+        <img className="info-image" alt="Location view" src={info.imageUrl}/>
 
 
         <div id="triangle"></div>

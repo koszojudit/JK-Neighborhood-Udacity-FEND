@@ -7,11 +7,6 @@ import InfoWindow from './InfoWindow'
 
 import '../App.css';
 
-// import PropTypes from 'prop-types';
-// import MapTheme from '../styles/map-style.json';
-// import * as data from '../data/locations.json';
-
-
 class MapContainer extends Component {
 
   static defaultProps = {
@@ -61,15 +56,15 @@ class MapContainer extends Component {
 
     return (
       <div>
-        <div className="map" role="application">
+        <div className="map">
 
           <GoogleMapReact
               bootstrapURLKeys={{ key: 'AIzaSyBy0vYHXw7H4DaAfYbsgPwk8b5GFPFyv_o' }}
               center={this.props.center}
               zoom={this.props.zoom}
+              options={{ styles: this.props.style}}
               role="application"
-              options={{ styles: this.props.style
-              }}
+              tabIndex="-1"
             >
 
             {locations.map(location => (

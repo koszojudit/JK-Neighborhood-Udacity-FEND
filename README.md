@@ -17,6 +17,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * [npm](https://www.npmjs.com/)
 * [Node](https://nodejs.org/en/)
 
+## Dependencies
+
+* [`google-map-react`](https://www.npmjs.com/package/google-map-react)
+
 ## Installation
 
 0. Install Node to have NPM
