@@ -14,6 +14,12 @@ class SideBar extends Component {
     filteredLocations: null,
   }
 
+  /* Handle search field input:
+  - create a query and close infoWindow
+  - create list of search results for matching location titles (filteredLocations)
+  - load results into updateLocations method so only those markers will be rendered
+  */
+
   searchLocations = (event) => {
 
     const { locations, closeInfoWindow, updateLocations } = this.props;
@@ -31,6 +37,12 @@ class SideBar extends Component {
     updateLocations(filteredLocations);
   }
 
+  /* Handle filter input:
+  - create a query and close infoWindow
+  - create list of search results for matching location types (filteredLocations)
+  - load results into updateLocations method so only those markers will be rendered
+  */
+
   filterLocations = (type) => {
     console.log(type);
 
@@ -47,6 +59,9 @@ class SideBar extends Component {
     updateLocations(filteredLocations);
   }
 
+
+  // Render component
+
   render () {
     const { locations, eventHandler } = this.props
 
@@ -55,6 +70,7 @@ class SideBar extends Component {
     const currentLocations = filteredLocations || locations;
 
     return (
+
       <aside className="sidebar">
         <input className="search-input"
           type="text"
@@ -120,6 +136,6 @@ class SideBar extends Component {
 
     );
   }
-  }
+}
 
-  export default SideBar;
+export default SideBar;

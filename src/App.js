@@ -26,28 +26,35 @@ class App extends Component {
     this.loadLocations();
   }
 
+  // Load search/filter input into the state of the component, so only those markers are rendered to the map
   updateLocations = filteredLocations => {
     this.setState({filteredLocations: filteredLocations});
   }
 
+  // Load locations array from JSON or updateLocation results
   loadLocations = () => {
     let locations = [];
     locations.push(...data);
     this.setState({ locations: locations });
   }
 
+  // Center the map when a location is selected, zoom the map and open an infoWindow
   centerMap = (location, position) => {
     this.setState({ center: position, zoom: 14 });
     console.log(this.state.zoom);
     this.openInfoWindow(location);
   }
 
+  // Open and close infoWindow
   openInfoWindow = (marker) => {
     this.setState({ selectMarker: marker, infoWindow: true })
   }
   closeInfoWindow = () => {
     this.setState({ selectMarker: [], infoWindow: false })
   }
+
+
+  // Render component
 
   render() {
     const { locations, filteredLocations, selectMarker, infoWindow, center, zoom } = this.state

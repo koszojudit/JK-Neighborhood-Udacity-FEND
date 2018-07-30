@@ -17,15 +17,11 @@ class MapContainer extends Component {
     isLoading: true
   }
 
-  eventHandler = (location, position) => {
-    this.setState({ marker: location });
-    this.props.eventHandler(location, position)
-  }
-
   componentDidMount() {
     this.setState({isLoading: false})
 
-    /*setTimeout(function() {
+    /* Test if preloader works with setTimeout
+    setTimeout(function() {
       console.log(this.state.isLoading);
       this.setState({ isLoading: false });
     }

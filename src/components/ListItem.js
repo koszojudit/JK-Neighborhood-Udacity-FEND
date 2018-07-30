@@ -11,10 +11,6 @@ class ListItem extends Component {
     this.props.eventHandler(location, position);
   }
 
-  eventHandler = (location, position) => {
-    this.props.eventHandler(location, position);
-  }
-
   render () {
     const { location } = this.props
 
