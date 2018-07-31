@@ -20,7 +20,7 @@ class App extends Component {
       lat: 47.497912,
       lng: 19.040235
     },
-    zoom: 13
+    zoom: 13,
   }
 
   componentDidMount () {
@@ -37,6 +37,9 @@ class App extends Component {
     let locations = [];
     locations.push(...data);
 
+    // Get photoUrl and rating from Foursquare, refresh state
+    // NOTE: this solution is sending venues 1 by 1 - to reduce costs, might be better to make a batch (bulk request)?
+
     locations.forEach(location => {
       getFsVenue(location)
       .then(fsData => {
@@ -45,16 +48,6 @@ class App extends Component {
         this.setState({ locations: locations });
       })
     });
-
-    // Map promises returned from getFsVenue function to locations array
-    //let requests = locations.map(location => getFsVenue(location));
-
-    /**
-    locations.forEach(location => {
-      getFsVenue(location)
-      .then(venue => console.log(venue));
-    });
-    */
 
     this.setState({ locations: locations });
   }
@@ -113,3 +106,8 @@ class App extends Component {
 }
 
 export default App;
+
+/* ToDo:
+- selected list item changes color
+- clear filter and search (show full list again)
+*/

@@ -15,11 +15,21 @@ class MapContainer extends Component {
   };
 
   state = {
-    isLoading: true
+    isLoading: true,
+    mapError: false
   }
 
   componentDidMount() {
     this.setState({isLoading: false})
+
+      setTimeout(() => {
+        const mapContent = document.querySelector('iframe');
+
+        if (!mapContent) {
+          this.setState({ mapError: true })
+        }
+      }, 3000);
+
 
     /* Test if preloader works with setTimeout
     setTimeout(function() {
@@ -40,7 +50,7 @@ class MapContainer extends Component {
 
   render() {
 
-    const { locations, marker, infoWindow, closeInfoWindow, isLoading } = this.props
+    const { locations, marker, infoWindow, closeInfoWindow, isLoading, mapError } = this.props
 
     if(isLoading) {
       return (
@@ -91,7 +101,11 @@ class MapContainer extends Component {
 
           </GoogleMapReact>
 
-
+          {!mapError ? null : (
+              <div className="error">
+                <p>Map did not load - please check your Internet connection and refresh your browser.</p>
+              </div>
+            )}
 
         </div>
 

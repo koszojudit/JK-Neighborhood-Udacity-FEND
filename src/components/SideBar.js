@@ -132,6 +132,12 @@ class SideBar extends Component {
           ))}
         </div>
 
+        {currentLocations.length !== 0 ? null : (
+            <div className="error">
+                <p className="location-list" role="listitem" tabIndex="0" aria-label={`0 locations listed`}>No results found.</p>
+            </div>
+          )}
+
       </aside>
 
     );

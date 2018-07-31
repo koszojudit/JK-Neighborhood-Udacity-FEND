@@ -157,7 +157,7 @@ main {
   background-color: #fff;
   padding: 0.5em;
   width: 220px;
-  height: 220px;
+  height: 240px;
   transform: translate(-50%, 15%);
   cursor: default;
   background: #fff;
@@ -210,7 +210,7 @@ main {
   font-size: 1.25em;
   text-align: left;
   padding: 8px 0 0 12px;
-  margin: 0;
+  margin: 0 2em 0 0;
 }
 
 .info-address {
