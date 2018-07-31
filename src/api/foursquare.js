@@ -33,5 +33,8 @@ export const getFsVenue = (location) => {
     const fsPhotoUrl = data.response.venue.bestPhoto.prefix + 'height100' + data.response.venue.bestPhoto.suffix;
 
     return {fsRating, fsPhotoUrl};
+  })
+  .catch(e => {
+    console.log("Error fetching data from Foursquare!")
   });
 }

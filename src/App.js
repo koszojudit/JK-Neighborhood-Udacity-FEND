@@ -39,7 +39,6 @@ class App extends Component {
 
     // Get photoUrl and rating from Foursquare, refresh state
     // NOTE: this solution is sending venues 1 by 1 - to reduce costs, might be better to make a batch (bulk request)?
-
     locations.forEach(location => {
       getFsVenue(location)
       .then(fsData => {
