@@ -156,8 +156,8 @@ main {
   text-align: center;
   background-color: #fff;
   padding: 0.5em;
-  width: 250px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
   transform: translate(-50%, 15%);
   cursor: default;
   background: #fff;
@@ -225,7 +225,26 @@ main {
 }
 
 .info-image {
-  height: 130px;
+  height: 120px;
+}
+
+.info-foursquare {
+  margin: 0.5em 0 0 0;
+}
+
+.info-rating {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 1.25em;
+  color: #00b551;
+}
+
+.info-fullscore {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+  color: #6e6e6e;
+  margin: 0;
 }
 
 /* Footer component */

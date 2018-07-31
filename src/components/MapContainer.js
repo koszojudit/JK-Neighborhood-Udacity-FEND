@@ -6,6 +6,7 @@ import Marker from './Marker'
 import InfoWindow from './InfoWindow'
 
 import '../App.css';
+import { MAP_KEY } from '../data/api-keys';
 
 class MapContainer extends Component {
 
@@ -55,7 +56,7 @@ class MapContainer extends Component {
         <div className="map">
 
           <GoogleMapReact
-              bootstrapURLKeys={{ key: 'AIzaSyBy0vYHXw7H4DaAfYbsgPwk8b5GFPFyv_o' }}
+              bootstrapURLKeys={{ key: MAP_KEY }}
               center={this.props.center}
               zoom={this.props.zoom}
               options={{ styles: this.props.style}}

@@ -7,6 +7,7 @@ import SideBar from './components/SideBar';
 import Footer from './components/Footer';
 
 import * as data from './data/locations.json';
+import {getFsVenue} from './api/foursquare';
 
 class App extends Component {
 
@@ -35,6 +36,26 @@ class App extends Component {
   loadLocations = () => {
     let locations = [];
     locations.push(...data);
+
+    locations.forEach(location => {
+      getFsVenue(location)
+      .then(fsData => {
+        location.rating = fsData.fsRating;
+        location.photoUrl = fsData.fsPhotoUrl;
+        this.setState({ locations: locations });
+      })
+    });
+
+    // Map promises returned from getFsVenue function to locations array
+    //let requests = locations.map(location => getFsVenue(location));
+
+    /**
+    locations.forEach(location => {
+      getFsVenue(location)
+      .then(venue => console.log(venue));
+    });
+    */
+
     this.setState({ locations: locations });
   }
 
@@ -52,7 +73,6 @@ class App extends Component {
   closeInfoWindow = () => {
     this.setState({ selectMarker: [], infoWindow: false })
   }
-
 
   // Render component
 

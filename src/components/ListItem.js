@@ -18,6 +18,7 @@ class ListItem extends Component {
       <div
           className="list-item"
           tabIndex="0"
+          role="listItem"
           aria-label={location.title}
           onClick={(event) => {
             event.preventDefault();
