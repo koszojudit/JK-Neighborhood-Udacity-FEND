@@ -42,9 +42,11 @@ class App extends Component {
     locations.forEach(location => {
       getFsVenue(location)
       .then(fsData => {
-        location.rating = fsData.fsRating;
-        location.photoUrl = fsData.fsPhotoUrl;
-        this.setState({ locations: locations });
+        if(fsData) {
+          location.rating = fsData.fsRating;
+          location.photoUrl = fsData.fsPhotoUrl;
+          this.setState({ locations: locations })
+        }
       })
     });
 
@@ -54,7 +56,6 @@ class App extends Component {
   // Center the map when a location is selected, zoom the map and open an infoWindow
   centerMap = (location, position) => {
     this.setState({ center: position, zoom: 14 });
-    console.log(this.state.zoom);
     this.openInfoWindow(location);
   }
 
