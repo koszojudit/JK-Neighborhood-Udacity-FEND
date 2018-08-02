@@ -1,9 +1,12 @@
 # Neighbourhood Map React
 
+[Live version](https://koszojudit.github.io/JK-Neighborhood-Udacity-FEND/)
+
 Contents:
 - [Project Description](#project-description)
 - [Prerequisites](#prerequisites)
-- [Installation](#installation)
+- [Run in Development Mode](#run-in-development-mode)
+- [Run in Production Mode](#run-in-production-mode)
 - [Using the App](#using-the-app)
 
 ## Project Description
@@ -25,7 +28,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/tutorial) - map
 * [Foursquare Places API](https://developer.foursquare.com/places-api) - images, rating
 
-## Installation
+## Run in Development Mode
 
 0. Install Node to have NPM
 1. Download the repository on your local computer
@@ -41,6 +44,30 @@ npm start
 This opens [localhost:3000](http://localhost:3000/) in your browser window.
 
 5. Start interacting with the app!
+
+***NOTE:*** *The app will only be available offline in production mode. (service workers only cache the site in that case)*
+
+## Run in Production Mode
+
+0. Install Phython (preferably 3.x)
+1. Download the repository on your local computer
+2. Open a terminal and navigate to project folder
+3. Run:
+```
+npm run build
+```
+4. Navigate to the `build` directory
+5. Run Phython localhost server:
+```
+-m http.server 8080
+```
+6. Navigate in your browser to [http://localhost:8000](http://localhost:8000)
+7. Start interacting with the app!
+
+If you have Python 2.x installed you can run
+```
+python -m SimpleHTTPServer 8080
+```
 
 ## Using the App
 
