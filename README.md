@@ -1,6 +1,6 @@
 # Neighbourhood Map React
 
-[Live version](https://koszojudit.github.io/JK-Neighborhood-Udacity-FEND/)
+[Live version](https://koszojudit.github.io/JK-Neighbourhood-Udacity-FEND/)
 
 Contents:
 - [Project Description](#project-description)
