@@ -2,7 +2,7 @@
   "name": "jk-neighborhood-udacity-fend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://koszojudit.github.io/JK-Neighborhood-Udacity-FEND/",
+  "homepage": "https://koszojudit.github.io/JK-Neighbourhood-Udacity-FEND/",
   "dependencies": {
     "gh-pages": "^1.2.0",
     "google-map-react": "^1.0.5",
